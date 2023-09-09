@@ -27,14 +27,14 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="main.jsp">JSP 게시판 웹 사이트</a>
+			<a class="navbar-brand" href="main.jsp">세시소프트</a>
 		</div>
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="main.jsp">메인</a></li>
-				<li><a href="bbs.jsp">게시판</a></li>
+				<li><a href="main.jsp">메인</a></li>
+				<li class="active"><a href="bbs.jsp">공지사항</a></li>
 			</ul>
-			<% 
+			<%
 				if (userID == null) {
 			%>
 			<ul class="nav navbar-nav navbar-right">
@@ -64,42 +64,29 @@
 			<%		
 				}
 			%>
+			<li><a href="c_i.jsp">회사 연혁</a></li>
 		</div>
 	</nav>
 	<div class="container">
-		<div class="jumbotron">
-			<div class="container">
-				<h1>웹 사이트 소개</h1>
-				<p>이 웹사이트는 부트스트랩으로 만든 JSP 웹 사이트입니다. 최소한의 간단한 로직만을 이용해서 개발 했습니다. 디자인 템플릿으로는 부트스트랩을 이용했습니다.</p>
-				<p><a class="btn btn-primary btn-pull" href="#" role="button">자세히 알아보기</a></p>
-			</div>
-		</div>
-	</div>
-	
-	<div class="container">
-		<div id="myCarousel" class="carousel slide" data-ride= "carousel">
-			<ol class="carousel-indicators">
-				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-				<li data-target="#myCarousel" data-slide-to="1"></li>
-				<li data-target="#myCarousel" data-slide-to="2"></li>
-			</ol>
-			<div class="carousel-inner">
-				<div class="item active">
-					<img src="https://i.namu.wiki/i/kB1KwlvICBBcMTqHYRDQNLVY_LMp6A9zuYBwO4DubHqN1ZW6XdQY85Pxj0y0BBSltX6zBVEyGrB76WlFpDK3gWqj_g2EXRikJaNyToZlev1F5q_Q5KHMqTxAJtTklepDaOObml0vQ1wzEttxqasVuA.webp">
-				</div>
-				<div class="item">
-					<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTA53B8pj9FCt2i3yOJpHKpxghHVycozbn-qA&usqp=CAUg">
-				</div>
-				<div class="item">
-					<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRO9YSbRr5af4eoM-u7_-c0OxdRRKGstHBTyw&usqp=CAU">
-				</div>
-			</div>
-			<a class="left carousel-control" href="#myCarousel" data-slide="prev">
-				<span class="glyphicon glyphicon-chevron-left"></span>
-			</a>
-			<a class="right carousel-control" href="#myCarousel" data-slide="next">
-				<span class="glyphicon glyphicon-chevron-rigth"></span>
-			</a>
+		<div class="row">
+			<form method="post" action="writeAction.jsp">
+				<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd">
+				<thead>
+					<tr>
+						<th colspan="2" style="background-color: #eeeeee; text-align: center;">게시판 글쓰기 양식</th>						
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><input type="text" class="form-control" placeholder="글 제목" name="bbsTitle" maxlength="50"></td>
+					</tr>
+					<tr>
+						<td><textarea class="form-control" placeholder="글 내용" name="bbsContent" maxlength="2048" style="height: 350px"></textarea></td>						
+					</tr>
+				</tbody>
+			</table>
+			<input type="submit" class="btn btn-primary pull-right" value="글쓰기">
+			</form>						
 		</div>
 	</div>
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
